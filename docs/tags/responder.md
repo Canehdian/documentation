@@ -34,14 +34,14 @@ This tag is used to add embeds to the message. Calling it multiple times will ad
     "icon_url": "{user.avatar}"
   },
   "title": "Welcome to our server, {user.username}!",
-  "description": "Please treat others with respect and enjoy your stay :)\n\nTo get started, click the button below to acquire the necessary role and gain access to the rest of this server.",
+  "description": "Please treat others with respect and enjoy your stay :)",
   "timestamp": "now"
 }}}
 {responder.embed;{$embedContent}}
 {responder.embed title="Hello world" description="Foo Bar" timestamp="5 hours ago"}
 {responder.send}
 ```
-<img src="https://micro.sylo.digital/i/4rxfCa" alt="Example showing run embed tags in Discord" loading="lazy" />
+<img src="https://micro.sylo.digital/i/xVnmBY" alt="Example showing run embed tags in Discord" loading="lazy" />
 
 Embed Elements
 `author-image`
