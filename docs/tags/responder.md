@@ -23,12 +23,25 @@ Set the responder to dm a user. This tag can be hit and miss if the user has the
 `{responder.dm;{user.id}}` will make the message direct-message the user in context.
 `{responder.dm fallback=true;{user.id}}` will send a message to the user and will fall back to the context channel if the user has their direct-mesage closed.
 
-## `{responder.embed}`
+## `{responder.embed;json}`
 
 This tag is used to add embeds to the message. Calling it multiple times will add multiple embeds to the message, up to a maximum of 10.
 
-`{responder.embed title="Hello world"}`
-`{responder.embed title=Test timestamp="5 hours ago"}`
+```
+{=embedContent;{{
+  "author": {
+    "name": "{user.username}",
+    "icon_url": "{user.avatar}"
+  },
+  "title": "Welcome to our server, {user.username}!",
+  "description": "Please treat others with respect and enjoy your stay :)\n\nTo get started, click the button below to acquire the necessary role and gain access to the rest of this server.",
+  "timestamp": "now"
+}}}
+{responder.embed;{$embedContent}}
+{responder.embed title="Hello world" description="Foo Bar" timestamp="5 hours ago"}
+{responder.send}
+```
+<img src="https://micro.sylo.digital/i/4rxfCa" alt="Example showing run embed tags in Discord" loading="lazy" />
 
 Embed Elements
 `author-image`
